@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="pNum1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="pNum2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="pNum3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="pNum4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="pLB.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="pWinDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="pNum1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="pNum2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="pNum3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="pNum4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="pLB.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="pWinDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Num1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Num2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Num3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Num4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="LB.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="WinDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Num1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Num2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Num3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Num4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="LB.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="WinDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pbLM.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        01IAAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="rtReadMe.Text" xml:space="preserve">
+    <value>The Florida Lottery Desktop App
+
+Created By Randy Harris 3/19/2016
+
+This is a Windows Forms C# Desktop application.
+
+This application was written in order to demonstrate basic C# skills. It is not for redistribution.
+
+(IMPORTANT)
+This application is dependent upon an MDF SQL database. The connection string must be configured in the app.config file in order for the app to function properly. 
+
+The physical path to the database in the connection string located in the app.congig 
+file must be modified to point to the path of the downloaded solution.
+            
+connectionString="DataSource=(LocalDB)\v11.0;AttachDbFilename=
+C:\Users\randy.harris\Desktop\
+FloridaLM\FloridaLM\FloridaLM\DatabaseFLLM.mdf;Integrated Security=True"
+
+The application links to the Florida Lottery website and retrieves the drawing history for the Lucky Money game by parsing the HTML formatted data and storing it in the database. The application generates the top ten number sets (tickets to purchase) derived from an algorithm that utilizes the numbers most drawn in each position and when they are due to be drawn again. 
+The algorithm is written in the form of a stored procedure (spGenNums). The definition of the algorithm is as follows:
+Query the numbers in each draw position and order them by most occurring for the last 60 draws.
+Each number is weighted by the longest period since the number was last drawn in each position.
+The number possibilities are from 1 to 47 for positions 1, 2, 3, and 4. The last position is the Lucky Ball. Since the numbers 47, 46, and 45 can never occur in position one and numbers 1, 2, and 3 can never occur in position 4, the number of permutations are reduced which in fact reduces the total possibilities. Thus, there are 178,365 different ways in which 4 numbers can be chosen from a total of 47 unique numbers. The Lucky Ball may be between 1 and 17. The number of permutations increases substantively when including the Lucky Ball bringing the chance of actually guessing the correct combination to 1 in 3,032,205.
+
+After applying the algorithm to each position, the top ten values in each position are used to generate a set of 10 best tickets to purchase.
+
+The application uses the following C# .net libraries. These libraries and architecture were chosen so as to demonstrate C# skills in different areas and do not reflect the best practices in all cases. 
+
+System;
+System.Collections.Generic;
+System.Linq;
+System.Web;
+System.Text;
+System.Net;
+System.IO;
+System.Xml.Serialization;
+System.Xml;
+System.Data;
+System.Net.NetworkInformation;
+System.Threading.Tasks;
+System.Windows.Forms;
+System.ComponentModel;
+System.Drawing;</value>
+  </data>
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+</root>
