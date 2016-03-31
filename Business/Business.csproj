@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Checks.cs" />
     <Compile Include="TempTable.cs" />
     <Compile Include="LMPicks.cs" />
     <Compile Include="LuckyMoneyNumbers.cs" />

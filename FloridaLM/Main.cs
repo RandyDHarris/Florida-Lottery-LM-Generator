@@ -7,23 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Business;
 
 namespace FloridaLM
 {
     public partial class Main : Form
     {
 
-        public List<LMNumbers> llmp {get; set;}
-        
+        public List<LuckyMoneyNumbers> llmp { get; set; }
+        public ServiceAccess sa { get; set; }
         public Main()
         {
             InitializeComponent();
-            
+            sa = new ServiceAccess();
         }
-
-
-
-
 
         private void GetHistoryFromFL()
         {
@@ -31,8 +28,10 @@ namespace FloridaLM
             {
                 if (sa.SiteAvailable())
                 {
+                    
+
                     Cursor.Current = Cursors.WaitCursor;
-                    Application.DoEvents();
+                    System.Windows.Forms.Application.DoEvents();
                     sa.ParseHistoryResults();
                     Cursor.Current = Cursors.Default;
                     MessageBox.Show("The history for the Florida Lottery Lucky Money game has been retrieved and stored.");

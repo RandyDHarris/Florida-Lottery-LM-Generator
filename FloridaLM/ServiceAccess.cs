@@ -9,10 +9,11 @@ using System.Xml.Serialization;
 using System.Xml;
 using System.Data;
 using System.Net.NetworkInformation;
+using Business;
 
 namespace FloridaLM
 {
-    public class ServiceAccess : Utilities
+    public class ServiceAccess : Checks
     {
        
         public bool SiteAvailable()
@@ -47,7 +48,7 @@ namespace FloridaLM
             numcntresult = 5;
 
 
-                DataAccess da = new DataAccess();
+                //DataAccess da = new DataAccess();
 
                 using (WebClient webClient = new WebClient())
                 {
@@ -107,14 +108,14 @@ namespace FloridaLM
                             string winningnums = sb.ToString();
                             string[] winnum = winningnums.Split('|');
 
-                            da.CUDHistory(1, 0, 0, 0, 0, 0, DateTime.Now);
-                            List<LMNumbers> llmt = new List<LMNumbers>();
+                            //da.CUDHistory(1, 0, 0, 0, 0, 0, DateTime.Now);
+                            List<LuckyMoneyNumbers> llmt = new List<LuckyMoneyNumbers>();
 
                             foreach (string tk in winnum)
                             {
                                 if (tk.Length > 0)
                                 {
-                                    LMNumbers lmt = new LMNumbers();
+                                    LuckyMoneyNumbers lmt = new LuckyMoneyNumbers();
                                     string[] pk = tk.Split('-');
                                     string NumValue = pk[1] + pk[2] + pk[3] + pk[4] + pk[5];
 
@@ -130,7 +131,7 @@ namespace FloridaLM
 
                             var lmticks = llmt.OrderByDescending(x => x.WinDate).ToList().Take(HistoryDays);
 
-                            foreach (LMNumbers flmt in lmticks)
+                            foreach (LuckyMoneyNumbers flmt in lmticks)
                             {
                                 //da.CUDHistory(3, flmt.Num1, flmt.Num2, flmt.Num3, flmt.Num4, flmt.LB, flmt.WinDate);
                             }

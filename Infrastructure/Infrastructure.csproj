@@ -43,17 +43,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Application\Application.csproj">
+    <ProjectReference Include="..\Application\App.csproj">
       <Project>{0eb80fcc-639d-432d-a2fd-91c8784d06fb}</Project>
-      <Name>Application</Name>
+      <Name>App</Name>
     </ProjectReference>
     <ProjectReference Include="..\Business\Business.csproj">
       <Project>{a46153cb-bd17-404c-b950-1032b70fc136}</Project>
       <Name>Business</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Utilities\Utilities.csproj">
-      <Project>{b58bf73e-ee4f-46ef-849d-b80c03bc459a}</Project>
-      <Name>Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
