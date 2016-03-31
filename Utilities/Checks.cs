@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Text;
-using System.Net;
-using System.IO;
+using System.Threading.Tasks;
 
-namespace FloridaLM
+namespace Utilities
 {
-    public class Utilities : FloridaLM.IUtilities.ICheckInt, FloridaLM.IUtilities.ICheckDate, FloridaLM.IUtilities.ICheckIntReturnZero
+    public class Checks
     {
-        
         public bool CheckDate(string inval)
         {
             bool retval = false;
@@ -25,7 +22,6 @@ namespace FloridaLM
             return retval;
         }
 
-
         public bool CheckInt(string inval)
         {
             bool retval = false;
@@ -39,7 +35,6 @@ namespace FloridaLM
 
             return retval;
         }
-
 
         public int CheckIntReturnZero(object obj)
         {
@@ -57,5 +52,20 @@ namespace FloridaLM
             }
         }
 
+        public DateTime CheckDateReturnMin(object obj)
+        {
+            DateTime _date;
+
+            bool result = DateTime.TryParse(obj.ToString(), out _date);
+
+            if (!result)
+            {
+                return DateTime.MinValue.Date;
+            }
+            else
+            {
+                return _date;
+            }
+        }
     }
 }

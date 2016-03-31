@@ -132,7 +132,7 @@ namespace FloridaLM
 
                             foreach (LMNumbers flmt in lmticks)
                             {
-                                da.CUDHistory(3, flmt.Num1, flmt.Num2, flmt.Num3, flmt.Num4, flmt.LB, flmt.WinDate);
+                                //da.CUDHistory(3, flmt.Num1, flmt.Num2, flmt.Num3, flmt.Num4, flmt.LB, flmt.WinDate);
                             }
  
                         }
