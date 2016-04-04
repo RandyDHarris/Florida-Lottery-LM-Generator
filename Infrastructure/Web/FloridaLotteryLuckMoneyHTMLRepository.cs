@@ -10,17 +10,30 @@ using System.Xml;
 using System.Data;
 using System.Net.NetworkInformation;
 using Business;
+using App;
 
 namespace FloridaLM
 {
-    public class ServiceAccess : Checks
+    public class FloridaLotteryLuckMoneyHTMLRepository : Checks, IFloridaLotteryLuckMoneyHTMLRepository
     {
        
+        private string _uriPath {get; set;}
+        private int _HistoryDays { get; set; }
+
+        private string _Host { get; set; }
+        public FloridaLotteryLuckMoneyHTMLRepository(string uriPath, int HistoryDays, string Host)
+        {
+            _uriPath = uriPath;
+            _HistoryDays = HistoryDays;
+            _Host = Host;
+        }
+        
+        
         public bool SiteAvailable()
         {
             bool connection = false;
             Ping myPing = new Ping();
-            String host = "www.floridalottery.com";
+            String host = _Host;
             byte[] buffer = new byte[32];
             int timeout = 1000;
             PingOptions pingOptions = new PingOptions();
@@ -29,30 +42,22 @@ namespace FloridaLM
             return connection;
         }
 
-        
-        public bool ParseHistoryResults()
+
+        public List<LuckyMoneyNumbers> GetParsedHistoryResults()
         {
+            List<LuckyMoneyNumbers> llmt = new List<LuckyMoneyNumbers>();
 
             string Game = "2";
             
             bool bReturn = true;
 
-            int HistoryDays = 0;
-
-            string uriPath = string.Empty;
-
             int numcntresult = 0;
 
-            uriPath = System.Configuration.ConfigurationManager.AppSettings["LuckyMoneyHistoryURI"];
-            HistoryDays = int.Parse(System.Configuration.ConfigurationManager.AppSettings["LuckyMoneyHistoryDays"]);
             numcntresult = 5;
-
-
-                //DataAccess da = new DataAccess();
 
                 using (WebClient webClient = new WebClient())
                 {
-                    using (Stream stream = webClient.OpenRead(uriPath))
+                    using (Stream stream = webClient.OpenRead(_uriPath))
                     {
                         using (StreamReader sr = new StreamReader(stream))
                         {
@@ -109,7 +114,8 @@ namespace FloridaLM
                             string[] winnum = winningnums.Split('|');
 
                             //da.CUDHistory(1, 0, 0, 0, 0, 0, DateTime.Now);
-                            List<LuckyMoneyNumbers> llmt = new List<LuckyMoneyNumbers>();
+
+                            //List<LuckyMoneyNumbers> llmt = new List<LuckyMoneyNumbers>();
 
                             foreach (string tk in winnum)
                             {
@@ -129,18 +135,19 @@ namespace FloridaLM
                                 }
                             }
 
-                            var lmticks = llmt.OrderByDescending(x => x.WinDate).ToList().Take(HistoryDays);
+                            var lmticks = llmt.OrderByDescending(x => x.WinDate).ToList().Take(_HistoryDays).ToList();
+                            
 
-                            foreach (LuckyMoneyNumbers flmt in lmticks)
-                            {
-                                //da.CUDHistory(3, flmt.Num1, flmt.Num2, flmt.Num3, flmt.Num4, flmt.LB, flmt.WinDate);
-                            }
+                            //foreach (LuckyMoneyNumbers flmt in lmticks)
+                            //{
+                            //    //da.CUDHistory(3, flmt.Num1, flmt.Num2, flmt.Num3, flmt.Num4, flmt.LB, flmt.WinDate);
+                            //}
  
                         }
                     }
                 }
 
-            return bReturn;
+                return llmt;
         }
 
     }

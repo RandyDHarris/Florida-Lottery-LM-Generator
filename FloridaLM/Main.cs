@@ -8,31 +8,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business;
+using App;
 
 namespace FloridaLM
 {
     public partial class Main : Form
     {
-
-        public List<LuckyMoneyNumbers> llmp { get; set; }
-        public ServiceAccess sa { get; set; }
+        public List<LuckyMoneyNumbers> _llmn { get; set; }
         public Main()
         {
             InitializeComponent();
-            sa = new ServiceAccess();
         }
-
         private void GetHistoryFromFL()
         {
+            bool bSiteUp = CheckFloridaLotteryIsUp();
+
             try
             {
-                if (sa.SiteAvailable())
+                if (bSiteUp)
                 {
-                    
-
                     Cursor.Current = Cursors.WaitCursor;
                     System.Windows.Forms.Application.DoEvents();
-                    sa.ParseHistoryResults();
+                    ParseFLMHistory();
                     Cursor.Current = Cursors.Default;
                     MessageBox.Show("The history for the Florida Lottery Lucky Money game has been retrieved and stored.");
                     GetHistory();
@@ -59,15 +56,27 @@ namespace FloridaLM
                 return;
             }
         }
-       
-        
+        public bool CheckFloridaLotteryIsUp()
+        {
+            var _container = StructureMapConfig.Configure();
+
+            var service = _container.GetInstance<FloridaLotteryLuckMoneyHTMLService>();
+
+            return service.GetSiteIsUp();
+        }
         private void GetHistory()
         {
             try
             {
-                var source = new BindingSource();
 
-                source.DataSource = llmp;
+                var _container = StructureMapConfig.Configure();
+
+                var service = _container.GetInstance<LuckyMoneyNumbersService>();
+
+                _llmn = service.GetNumbers();
+                
+                var source = new BindingSource();
+                source.DataSource = _llmn;
                 dgHistory.DataSource = source;
             }
             catch (Exception ex)
@@ -76,14 +85,12 @@ namespace FloridaLM
                 return;
             }
         }
-        
-
         private void GetPicks()
         {
             try
             {
                 var source = new BindingSource();
-                source.DataSource = llmp;
+                source.DataSource = _llmn;
                 dgPicks.DataSource = source;
                 dgPicks.Columns[6].Visible = false;
             }
@@ -93,22 +100,24 @@ namespace FloridaLM
                 return;
             }
         }
+        private void ParseFLMHistory()
+        {
+            var _container = StructureMapConfig.Configure();
 
+            var service = _container.GetInstance<FloridaLotteryLuckMoneyHTMLService>();
 
+            service.UpdateFloridaLuckyMoneyHistory();
+        }
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             rtReadMe.Visible = true;
             dgPicks.Visible = false;
             dgHistory.Visible = false;
         }
-
-
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             GetHistoryFromFL();
         }
-
-
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
             dgPicks.Visible = false;
@@ -116,8 +125,6 @@ namespace FloridaLM
             rtReadMe.Visible = false;
             GetHistory();
         }
-
-
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
             GetPicks();
@@ -125,7 +132,6 @@ namespace FloridaLM
             dgHistory.Visible = false;
             rtReadMe.Visible = false;
         }
-
 
     }
 }

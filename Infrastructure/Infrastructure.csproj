@@ -39,7 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SqlLuckyMoneyRepository.cs" />
+    <Compile Include="Web\FloridaLotteryLuckMoneyHTMLRepository.cs" />
+    <Compile Include="SQL\SqlLuckyMoneyRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
