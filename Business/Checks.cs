@@ -54,18 +54,28 @@ namespace Business
 
         public DateTime CheckDateReturnMin(object obj)
         {
-            DateTime _date;
+            if (obj != null)
+            {
+                DateTime _date;
 
-            bool result = DateTime.TryParse(obj.ToString(), out _date);
+                bool result = DateTime.TryParse(obj.ToString(), out _date);
 
-            if (!result)
+                if (!result)
+                {
+                    return DateTime.MinValue.Date;
+                }
+                else
+                {
+                    return _date;
+                }
+            }
+            else 
             {
                 return DateTime.MinValue.Date;
             }
-            else
-            {
-                return _date;
-            }
+            
+            
+
         }
     }
 }

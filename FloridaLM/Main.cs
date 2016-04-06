@@ -15,6 +15,7 @@ namespace FloridaLM
     public partial class Main : Form
     {
         public List<LuckyMoneyNumbers> _llmn { get; set; }
+        public List<LMPicks> _llmp { get; set; }
         public Main()
         {
             InitializeComponent();
@@ -69,11 +70,7 @@ namespace FloridaLM
             try
             {
 
-                var _container = StructureMapConfig.Configure();
-
-                var service = _container.GetInstance<LuckyMoneyNumbersService>();
-
-                _llmn = service.GetNumbers();
+                GetHistoryDataFromRepository();
                 
                 var source = new BindingSource();
                 source.DataSource = _llmn;
@@ -85,12 +82,24 @@ namespace FloridaLM
                 return;
             }
         }
+        private void GetHistoryDataFromRepository()
+        {
+                var _container = StructureMapConfig.Configure();
+
+                var service = _container.GetInstance<LuckyMoneyNumbersService>();
+
+                _llmn = service.GetNumbers();
+        }
         private void GetPicks()
         {
             try
             {
+                //GetHistoryDataFromRepository();
+
+                GenerateNumbers gn = new GenerateNumbers(_llmn);
+                
                 var source = new BindingSource();
-                source.DataSource = _llmn;
+                source.DataSource = gn.GetPickList();
                 dgPicks.DataSource = source;
                 dgPicks.Columns[6].Visible = false;
             }

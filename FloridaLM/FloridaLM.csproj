@@ -121,10 +121,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DatabaseFLLM.mdf">
+    <Content Include="DataBase\DatabaseFLLM.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="DatabaseFLLM_log.ldf">
+    <Content Include="DataBase\DatabaseFLLM_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DatabaseFLLM.mdf</DependentUpon>
     </Content>

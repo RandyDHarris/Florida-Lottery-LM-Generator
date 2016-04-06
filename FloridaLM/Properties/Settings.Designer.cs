@@ -26,8 +26,8 @@ namespace FloridaLM.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\v11.0;AttachDbFilename=|DataDirectory|\\DatabaseFLLM.mdf;Int" +
-            "egrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\v11.0;AttachDbFilename=|DataDirectory|\\DataBase\\DatabaseFLL" +
+            "M.mdf;Integrated Security=True")]
         public string DatabaseFLLMConnectionString {
             get {
                 return ((string)(this["DatabaseFLLMConnectionString"]));

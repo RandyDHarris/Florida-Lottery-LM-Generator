@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[tblFan5]
+(
+	[Id] INT NOT NULL PRIMARY KEY
+)
