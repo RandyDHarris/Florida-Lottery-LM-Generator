@@ -51,10 +51,14 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Mock\MockLuckyMoneyRepository.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="GetLuckyNumbersFromMockData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Application\App.csproj">
+      <Project>{0eb80fcc-639d-432d-a2fd-91c8784d06fb}</Project>
+      <Name>App</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Business\Business.csproj">
       <Project>{a46153cb-bd17-404c-b950-1032b70fc136}</Project>
       <Name>Business</Name>
