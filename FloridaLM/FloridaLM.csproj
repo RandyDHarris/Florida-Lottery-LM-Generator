@@ -89,6 +89,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="AssemblyDependencies.dgml" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -128,6 +129,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DatabaseFLLM.mdf</DependentUpon>
     </Content>
+    <Content Include="Images\Dependancies.jpg" />
     <Content Include="Images\LuckyMoney.png" />
   </ItemGroup>
   <ItemGroup />
