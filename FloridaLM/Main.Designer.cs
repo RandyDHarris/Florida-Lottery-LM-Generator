@@ -188,7 +188,7 @@
             this.rtReadMe.Name = "rtReadMe";
             this.rtReadMe.Size = new System.Drawing.Size(712, 422);
             this.rtReadMe.TabIndex = 7;
-            this.rtReadMe.Text = resources.GetString("rtReadMe.Text");
+            this.rtReadMe.Text = "";
             // 
             // menuStrip1
             // 
