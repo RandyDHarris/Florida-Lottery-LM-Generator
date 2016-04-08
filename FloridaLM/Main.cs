@@ -1,4 +1,11 @@
-﻿using System;
+﻿//AUTHOR:       Randy Harris
+//Date:         4/8/2016
+//Class:        Main
+//Description:  This class contains all form and control code as well as object event handlers. 
+//              It inherts from the form base             
+
+#region Assemblies
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,13 +17,18 @@ using System.Windows.Forms;
 using Business;
 using App;
 using System.Runtime.Caching;
+#endregion
 
 namespace FloridaLM
 {
     public partial class Main : Form
     {
+        #region Properties
         public List<LuckyMoneyNumbers> _llmn { get; set; }
         public List<LMPicks> _llmp { get; set; }
+        #endregion
+
+        #region Methods
         public Main()
         {
             InitializeComponent();
@@ -118,6 +130,9 @@ namespace FloridaLM
 
             service.GetParsedHistoryResults();
         }
+        #endregion
+
+        #region Handlers
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             rtReadMe.Visible = true;
@@ -147,6 +162,6 @@ namespace FloridaLM
         {
             //dispose of cache here
         }
-
+        #endregion
     }
 }

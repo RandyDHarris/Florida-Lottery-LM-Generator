@@ -50,6 +50,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CheckFloridaLotterIsUp.cs" />
     <Compile Include="Mock\MockLuckyMoneyRepository.cs" />
     <Compile Include="GetLuckyNumbersFromMockData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

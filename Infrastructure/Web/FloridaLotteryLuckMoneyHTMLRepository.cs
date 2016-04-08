@@ -1,4 +1,12 @@
-﻿using System;
+﻿//AUTHOR:       Randy Harris
+//Date:         4/8/2016
+//Class:        FloridaLotteryLuckMoneyHTMLRepository
+//Description:  This class serves as the main repository for retrieving Florida Lottery Luck Money
+//              history. The class inherits from the base class "Checks" and its interface IFloridaLotteryLuckMoneyHTMLRepository.
+//              This class utilizes chaching by retrieving the data in HTML, parsing it, and storing it in cache.
+
+#region Assemblies
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,16 +20,20 @@ using System.Net.NetworkInformation;
 using Business;
 using App;
 using System.Runtime.Caching;
-
+#endregion
 
 namespace Infrastructure.Web
 {
     public class FloridaLotteryLuckMoneyHTMLRepository : Checks, IFloridaLotteryLuckMoneyHTMLRepository
     {
+        #region Properties
         private string _uriPath {get; set;}
         private int _HistoryDays { get; set; }
         private string _Host { get; set; }
         public ObjectCache _cache { get; set; }
+        #endregion
+
+        #region Methods
         public FloridaLotteryLuckMoneyHTMLRepository(string uriPath, int HistoryDays, string Host)
         {
             _uriPath = uriPath;
@@ -151,6 +163,6 @@ namespace Infrastructure.Web
             _cache.Set("LMResultsFromFLWebSite", llmt, policy);
 
         }
-
+        #endregion
     }
 }

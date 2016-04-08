@@ -1,38 +1,42 @@
-﻿using System;
+﻿//AUTHOR:       Randy Harris
+//Date:         4/8/2016
+//Class:        MockLuckyMoneyRepository
+//Description:  This class generates mock data for unit test.
+
+#region Assemblies
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using App;
 using Business;
+#endregion
 
 namespace Test.Mock
 {
     class MockLuckyMoneyRepository : Checks, IFloridaLotteryLuckMoneyHTMLRepository
     {
+        #region Properties
         private readonly List<LuckyMoneyNumbers> _LuckyMoneyMockData;
 
         private bool _SiteAvailable;
+        #endregion
 
+        #region Methods
         public MockLuckyMoneyRepository()
         {
             _LuckyMoneyMockData = new List<LuckyMoneyNumbers>();
         }
-
         public List<LuckyMoneyNumbers> GetParsedHistoryResults()
         {
             GetLuckyMoneyNumbersFromMock();
             var LMN = _LuckyMoneyMockData;
             return LMN;
         }
-
         public bool SiteAvailable()
         {
             GetSiteIsUp();
             var GSIU = _SiteAvailable;
             return GSIU;
         }
-
         public void GetLuckyMoneyNumbersFromMock()
         {
             for (int i = 0; i < 10; i++)
@@ -49,12 +53,10 @@ namespace Test.Mock
             }
 
         }
-
         public void GetSiteIsUp()
         {
             _SiteAvailable = true;
         }
-
         public int GenerateRandom(int pos)
         {
             Random random = new Random();
@@ -81,7 +83,7 @@ namespace Test.Mock
 
             return randomNumber;
         }
-
+        #endregion
     }
 }
 

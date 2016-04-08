@@ -1,13 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//AUTHOR:       Randy Harris
+//Date:         4/8/2016
+//Class:        Checks
+//Description:  This class contains helper methods that check for invalid values     
+
+#region Assemblies
+using System;
+#endregion
 
 namespace Business
 {
     public class Checks
     {
+        #region Helper Methods
         public bool CheckDate(string inval)
         {
             bool retval = false;
@@ -21,7 +25,6 @@ namespace Business
 
             return retval;
         }
-
         public bool CheckInt(string inval)
         {
             bool retval = false;
@@ -35,7 +38,6 @@ namespace Business
 
             return retval;
         }
-
         public int CheckIntReturnZero(object obj)
         {
             int number;
@@ -51,7 +53,6 @@ namespace Business
                 return number;
             }
         }
-
         public DateTime CheckDateReturnMin(object obj)
         {
             if (obj != null)
@@ -73,9 +74,7 @@ namespace Business
             {
                 return DateTime.MinValue.Date;
             }
-            
-            
-
         }
+        #endregion
     }
 }
