@@ -26,6 +26,7 @@ namespace FloridaLM
         #region Properties
         public List<LuckyMoneyNumbers> _llmn { get; set; }
         public List<LMPicks> _llmp { get; set; }
+        public Checks _chk { get; set; }
         #endregion
 
         #region Methods
@@ -37,15 +38,20 @@ namespace FloridaLM
         {
             bool bSiteUp = CheckFloridaLotteryIsUp();
 
+            _chk = new Checks();
             try
             {
                 if (bSiteUp)
                 {
-                    Cursor.Current = Cursors.WaitCursor;
-                    System.Windows.Forms.Application.DoEvents();
-                    ParseFLMHistory();
-                    Cursor.Current = Cursors.Default;
-                    MessageBox.Show("The history for the Florida Lottery Lucky Money game has been retrieved and stored.");
+                    if (!_chk.CheckIfCacheExist("LMResultsFromFLWebSite"))
+                    {
+                        Cursor.Current = Cursors.WaitCursor;
+                        System.Windows.Forms.Application.DoEvents();
+                        ParseFLMHistory();
+                        Cursor.Current = Cursors.Default;
+                        MessageBox.Show("The history for the Florida Lottery Lucky Money game has been retrieved and stored.");
+                    }
+
                     GetHistory();
                     dgPicks.Visible = false;
                     dgHistory.Visible = true;
@@ -143,13 +149,6 @@ namespace FloridaLM
         {
             GetHistoryFromFL();
         }
-        private void toolStripMenuItem3_Click(object sender, EventArgs e)
-        {
-            dgPicks.Visible = false;
-            dgHistory.Visible = true;
-            rtReadMe.Visible = false;
-            GetHistory();
-        }
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
             GetPicks();
@@ -157,7 +156,6 @@ namespace FloridaLM
             dgHistory.Visible = false;
             rtReadMe.Visible = false;
         }
-
         private void OnApplicationExit(object sender, EventArgs e) 
         {
             //dispose of cache here

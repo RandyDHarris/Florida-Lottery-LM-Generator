@@ -8,18 +8,14 @@
 #region Assemblies
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Text;
 using System.Net;
 using System.IO;
-using System.Xml.Serialization;
-using System.Xml;
-using System.Data;
 using System.Net.NetworkInformation;
+using System.Runtime.Caching;
 using Business;
 using App;
-using System.Runtime.Caching;
+
 #endregion
 
 namespace Infrastructure.Web
@@ -31,6 +27,7 @@ namespace Infrastructure.Web
         private int _HistoryDays { get; set; }
         private string _Host { get; set; }
         public ObjectCache _cache { get; set; }
+        public Checks _chk { get; set; }
         #endregion
 
         #region Methods
@@ -40,6 +37,7 @@ namespace Infrastructure.Web
             _HistoryDays = HistoryDays;
             _Host = Host;
             _cache = MemoryCache.Default;
+            _chk = new Checks();
         }
         public bool SiteAvailable()
         {
@@ -57,9 +55,9 @@ namespace Infrastructure.Web
         {
             List<LuckyMoneyNumbers> llmt = new List<LuckyMoneyNumbers>();
 
-            if (_cache.Contains("LMResultsFromFLWebSite", null))
+            if (_chk.CheckIfCacheExist("LMResultsFromFLWebSite"))
             {
-                llmt = (List<LuckyMoneyNumbers>)_cache.Get("LMResultsFromFLWebSite");
+                llmt = (List<LuckyMoneyNumbers>)_chk.GetCache("LMResultsFromFLWebSite");
             }
             else
             { 
@@ -145,23 +143,12 @@ namespace Infrastructure.Web
                                     llmt.Add(lmt);
                                 }
                             }
-
-                            SetCache(llmt);
-
+                            _chk.SetCache(llmt, "LMResultsFromFLWebSite");
                         }
                     }
                 }
             }
-                
-                return llmt;
-        }
-        private void SetCache(List<LuckyMoneyNumbers> llmt)
-        {
-
-            CacheItemPolicy policy = new CacheItemPolicy();
-
-            _cache.Set("LMResultsFromFLWebSite", llmt, policy);
-
+        return llmt;
         }
         #endregion
     }

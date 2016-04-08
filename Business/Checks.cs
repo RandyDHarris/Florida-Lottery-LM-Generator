@@ -5,12 +5,21 @@
 
 #region Assemblies
 using System;
+using System.Runtime.Caching;
 #endregion
 
 namespace Business
 {
     public class Checks
     {
+        public ObjectCache _cache { get; set; }
+        #region Constructor
+        public Checks()
+        {
+            _cache = MemoryCache.Default;
+        }
+        #endregion
+
         #region Helper Methods
         public bool CheckDate(string inval)
         {
@@ -74,6 +83,29 @@ namespace Business
             {
                 return DateTime.MinValue.Date;
             }
+        }
+        public bool CheckIfCacheExist(string CacheItemName)
+        {
+            if (_cache.Contains(CacheItemName, null))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public void SetCache(object obj, string CacheItemName)
+        {
+            CacheItemPolicy policy = new CacheItemPolicy();
+            _cache.Set(CacheItemName, obj, policy);
+        }
+
+        public object GetCache(string CacheItemName)
+        {
+            object obj = _cache.Get(CacheItemName);
+            return obj;
         }
         #endregion
     }
