@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business;
 using App;
+using System.Runtime.Caching;
 
 namespace FloridaLM
 {
@@ -86,9 +87,9 @@ namespace FloridaLM
         {
                 var _container = StructureMapConfig.Configure();
 
-                var service = _container.GetInstance<LuckyMoneyNumbersService>();
+                var service = _container.GetInstance<FloridaLotteryLuckMoneyHTMLService>();
 
-                _llmn = service.GetNumbers();
+                _llmn = service.GetParsedHistoryResults();
         }
         private void GetPicks()
         {
@@ -115,7 +116,7 @@ namespace FloridaLM
 
             var service = _container.GetInstance<FloridaLotteryLuckMoneyHTMLService>();
 
-            service.UpdateFloridaLuckyMoneyHistory();
+            service.GetParsedHistoryResults();
         }
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -140,6 +141,11 @@ namespace FloridaLM
             dgPicks.Visible = true;
             dgHistory.Visible = false;
             rtReadMe.Visible = false;
+        }
+
+        private void OnApplicationExit(object sender, EventArgs e) 
+        {
+            //dispose of cache here
         }
 
     }

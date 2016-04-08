@@ -48,9 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FloridaLotteryLuckMoneyHTMLService.cs" />
-    <Compile Include="ILuckyMoneyNumbersRepository.cs" />
     <Compile Include="IFloridaLotteryLuckMoneyHTMLRepository.cs" />
-    <Compile Include="LuckyMoneyNumbersService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

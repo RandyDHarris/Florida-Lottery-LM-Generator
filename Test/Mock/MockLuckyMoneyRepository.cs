@@ -8,35 +8,29 @@ using Business;
 
 namespace Test.Mock
 {
-    class MockLuckyMoneyRepository : Checks, ILuckyMoneyNumbersRepository
+    class MockLuckyMoneyRepository : Checks, IFloridaLotteryLuckMoneyHTMLRepository
     {
         private readonly List<LuckyMoneyNumbers> _LuckyMoneyMockData;
+
+        private bool _SiteAvailable;
 
         public MockLuckyMoneyRepository()
         {
             _LuckyMoneyMockData = new List<LuckyMoneyNumbers>();
         }
 
-        public List<LuckyMoneyNumbers> GetLuckyMoneyNumbers()
+        public List<LuckyMoneyNumbers> GetParsedHistoryResults()
         {
             GetLuckyMoneyNumbersFromMock();
             var LMN = _LuckyMoneyMockData;
             return LMN;
         }
 
-        public void InsertLuckyMoneyNumbers(int Operation, int Num1, int Num2, int Num3, int Num4, int LB, DateTime WinDate)
+        public bool SiteAvailable()
         {
-            CUDHistory(Operation, Num1, Num2, Num3, Num4, LB, WinDate);
-        }
-
-        public void UpdateLuckyMoneyNumbers(int Operation, int Num1, int Num2, int Num3, int Num4, int LB, DateTime WinDate)
-        {
-            //CUDHistory(Operation, Num1, Num2, Num3, Num4, LB, WinDate);
-        }
-
-        public void DeleteLuckyMoneyNumbers(int Operation, int Num1, int Num2, int Num3, int Num4, int LB, DateTime WinDate)
-        {
-            CUDHistory(Operation, Num1, Num2, Num3, Num4, LB, WinDate);
+            GetSiteIsUp();
+            var GSIU = _SiteAvailable;
+            return GSIU;
         }
 
         public void GetLuckyMoneyNumbersFromMock()
@@ -54,6 +48,11 @@ namespace Test.Mock
                 _LuckyMoneyMockData.Add(lmn);
             }
 
+        }
+
+        public void GetSiteIsUp()
+        {
+            _SiteAvailable = true;
         }
 
         public int GenerateRandom(int pos)
@@ -83,9 +82,6 @@ namespace Test.Mock
             return randomNumber;
         }
 
-        public void CUDHistory(int Operation, int Num1, int Num2, int Num3, int Num4, int LB, DateTime WinDate)
-        {
-        }
     }
 }
 

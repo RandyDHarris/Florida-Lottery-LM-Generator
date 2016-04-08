@@ -11,24 +11,24 @@ using System.Data;
 using System.Net.NetworkInformation;
 using Business;
 using App;
+using System.Runtime.Caching;
 
-namespace FloridaLM
+
+namespace Infrastructure.Web
 {
     public class FloridaLotteryLuckMoneyHTMLRepository : Checks, IFloridaLotteryLuckMoneyHTMLRepository
     {
-       
         private string _uriPath {get; set;}
         private int _HistoryDays { get; set; }
-
         private string _Host { get; set; }
+        public ObjectCache _cache { get; set; }
         public FloridaLotteryLuckMoneyHTMLRepository(string uriPath, int HistoryDays, string Host)
         {
             _uriPath = uriPath;
             _HistoryDays = HistoryDays;
             _Host = Host;
+            _cache = MemoryCache.Default;
         }
-        
-        
         public bool SiteAvailable()
         {
             bool connection = false;
@@ -41,19 +41,23 @@ namespace FloridaLM
             connection = (reply.Status == IPStatus.Success);
             return connection;
         }
-
-
         public List<LuckyMoneyNumbers> GetParsedHistoryResults()
         {
             List<LuckyMoneyNumbers> llmt = new List<LuckyMoneyNumbers>();
 
-            string Game = "2";
+            if (_cache.Contains("LMResultsFromFLWebSite", null))
+            {
+                llmt = (List<LuckyMoneyNumbers>)_cache.Get("LMResultsFromFLWebSite");
+            }
+            else
+            { 
+                string Game = "2";
             
-            bool bReturn = true;
+                bool bReturn = true;
 
-            int numcntresult = 0;
+                int numcntresult = 0;
 
-            numcntresult = 5;
+                numcntresult = 5;
 
                 using (WebClient webClient = new WebClient())
                 {
@@ -71,7 +75,6 @@ namespace FloridaLM
                             {
 
                                 int Start, End;
-
 
                                 string strStart = "<font size=2 face=\"helvetica\">";
                                 string strEnd = "</font>";
@@ -113,10 +116,6 @@ namespace FloridaLM
                             string winningnums = sb.ToString();
                             string[] winnum = winningnums.Split('|');
 
-                            //da.CUDHistory(1, 0, 0, 0, 0, 0, DateTime.Now);
-
-                            //List<LuckyMoneyNumbers> llmt = new List<LuckyMoneyNumbers>();
-
                             foreach (string tk in winnum)
                             {
                                 if (tk.Length > 0)
@@ -135,19 +134,22 @@ namespace FloridaLM
                                 }
                             }
 
-                            var lmticks = llmt.OrderByDescending(x => x.WinDate).ToList().Take(_HistoryDays).ToList();
-                            
+                            SetCache(llmt);
 
-                            //foreach (LuckyMoneyNumbers flmt in lmticks)
-                            //{
-                            //    //da.CUDHistory(3, flmt.Num1, flmt.Num2, flmt.Num3, flmt.Num4, flmt.LB, flmt.WinDate);
-                            //}
- 
                         }
                     }
                 }
-
+            }
+                
                 return llmt;
+        }
+        private void SetCache(List<LuckyMoneyNumbers> llmt)
+        {
+
+            CacheItemPolicy policy = new CacheItemPolicy();
+
+            _cache.Set("LMResultsFromFLWebSite", llmt, policy);
+
         }
 
     }
