@@ -28,6 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.dgPicks = new System.Windows.Forms.DataGridView();
             this.pNum1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,11 +51,11 @@
             this.LB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WinDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pbLM = new System.Windows.Forms.PictureBox();
-            this.rtReadMe = new System.Windows.Forms.RichTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.webBrowser = new System.Windows.Forms.WebBrowser();
             ((System.ComponentModel.ISupportInitialize)(this.dgPicks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLM)).BeginInit();
@@ -57,6 +64,14 @@
             // 
             // dgPicks
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgPicks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgPicks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgPicks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pNum1,
@@ -65,10 +80,31 @@
             this.pNum4,
             this.pLB,
             this.pWinDate});
-            this.dgPicks.Location = new System.Drawing.Point(154, 89);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgPicks.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgPicks.Location = new System.Drawing.Point(299, 92);
             this.dgPicks.Name = "dgPicks";
-            this.dgPicks.RowTemplate.Height = 24;
-            this.dgPicks.Size = new System.Drawing.Size(441, 313);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgPicks.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgPicks.RowHeadersWidth = 60;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgPicks.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgPicks.RowTemplate.Height = 40;
+            this.dgPicks.Size = new System.Drawing.Size(943, 560);
             this.dgPicks.TabIndex = 2;
             this.dgPicks.Visible = false;
             // 
@@ -115,6 +151,14 @@
             // 
             // dgHistory
             // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Num1,
@@ -123,10 +167,22 @@
             this.Num4,
             this.LB,
             this.WinDate});
-            this.dgHistory.Location = new System.Drawing.Point(93, 89);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgHistory.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgHistory.Location = new System.Drawing.Point(142, 92);
             this.dgHistory.Name = "dgHistory";
-            this.dgHistory.RowTemplate.Height = 24;
-            this.dgHistory.Size = new System.Drawing.Size(546, 422);
+            this.dgHistory.RowHeadersWidth = 60;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgHistory.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgHistory.RowTemplate.Height = 40;
+            this.dgHistory.Size = new System.Drawing.Size(1213, 560);
             this.dgHistory.TabIndex = 3;
             this.dgHistory.Visible = false;
             // 
@@ -175,20 +231,11 @@
             // pbLM
             // 
             this.pbLM.Image = ((System.Drawing.Image)(resources.GetObject("pbLM.Image")));
-            this.pbLM.Location = new System.Drawing.Point(588, 12);
+            this.pbLM.Location = new System.Drawing.Point(1372, 13);
             this.pbLM.Name = "pbLM";
             this.pbLM.Size = new System.Drawing.Size(136, 58);
             this.pbLM.TabIndex = 6;
             this.pbLM.TabStop = false;
-            // 
-            // rtReadMe
-            // 
-            this.rtReadMe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtReadMe.Location = new System.Drawing.Point(12, 89);
-            this.rtReadMe.Name = "rtReadMe";
-            this.rtReadMe.Size = new System.Drawing.Size(712, 422);
-            this.rtReadMe.TabIndex = 7;
-            this.rtReadMe.Text = "";
             // 
             // menuStrip1
             // 
@@ -199,41 +246,52 @@
             this.toolStripMenuItem4});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(736, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1520, 49);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // toolStripMenuItem1
             // 
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(80, 24);
-            this.toolStripMenuItem1.Text = "Read Me";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(236, 45);
+            this.toolStripMenuItem1.Text = "Documentation";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
+            this.toolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(108, 24);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(205, 45);
             this.toolStripMenuItem2.Text = "Show History";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // toolStripMenuItem4
             // 
+            this.toolStripMenuItem4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(117, 24);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(225, 45);
             this.toolStripMenuItem4.Text = "Generate Picks";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
+            // 
+            // webBrowser
+            // 
+            this.webBrowser.Location = new System.Drawing.Point(12, 92);
+            this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser.Name = "webBrowser";
+            this.webBrowser.Size = new System.Drawing.Size(1496, 560);
+            this.webBrowser.TabIndex = 9;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 549);
-            this.Controls.Add(this.rtReadMe);
+            this.ClientSize = new System.Drawing.Size(1520, 685);
             this.Controls.Add(this.pbLM);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.dgHistory);
             this.Controls.Add(this.dgPicks);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.webBrowser);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Florida Lottery Lucky Money Game";
@@ -264,11 +322,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pLB;
         private System.Windows.Forms.DataGridViewTextBoxColumn pWinDate;
         private System.Windows.Forms.PictureBox pbLM;
-        private System.Windows.Forms.RichTextBox rtReadMe;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.WebBrowser webBrowser;
     }
 }
 
