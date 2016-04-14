@@ -2608,7 +2608,7 @@
 		<col def="I2">Encoded</col>
 		<col def="S0">Comment</col>
 		<col def="I4">TimeStamp</col>
-		<row><td>COMPANY_NAME</td><td>1033</td><td>Randy Harris - Software Development Coaching</td><td>0</td><td/><td>1109699244</td></row>
+		<row><td>COMPANY_NAME</td><td>1033</td><td>Randy Harris - Software Development Coaching</td><td>0</td><td/><td>1243886635</td></row>
 		<row><td>DN_AlwaysInstall</td><td>1033</td><td>Always Install</td><td>0</td><td/><td>975473264</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_COLOR</td><td>1033</td><td>The color settings of your system are not adequate for running [ProductName].</td><td>0</td><td/><td>975473264</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_DOTNETVERSION40FULL</td><td>1033</td><td>Microsoft .NET Framework 4.0 Full package or greater needs to be installed for this installation to continue.</td><td>0</td><td/><td>975498000</td></row>
@@ -3710,8 +3710,8 @@
 		<row><td>IDS__TargetReq_DESC_PROCESSOR</td><td>1033</td><td>The processor is not adequate for running [ProductName].</td><td>0</td><td/><td>975473264</td></row>
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>975473264</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>975473264</td></row>
-		<row><td>ID_STRING1</td><td>1033</td><td>http://www.RandyHarris-SoftwareDevelopmentCoaching.com</td><td>0</td><td/><td>1109699244</td></row>
-		<row><td>ID_STRING2</td><td>1033</td><td>Randy Harris - Software Development Coaching</td><td>0</td><td/><td>1109699244</td></row>
+		<row><td>ID_STRING1</td><td>1033</td><td>http://www.RandyHarris-SoftwareDevelopmentCoaching.com</td><td>0</td><td/><td>1243886635</td></row>
+		<row><td>ID_STRING2</td><td>1033</td><td>Randy Harris - Software Development Coaching</td><td>0</td><td/><td>1243886635</td></row>
 		<row><td>ID_STRING3</td><td>1033</td><td/><td>0</td><td/><td>975449552</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>975473264</td></row>
 	</table>
@@ -3827,8 +3827,6 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I2">ISIconIndex</col>
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\setupicon.ico</td><td>0</td></row>
-		<row><td>UNINST_Uninstall_S_6DCFCDCD70E443968765F76BEA9F981D.exe</td><td/><td>C:\Program Files (x86)\InstallShield\2015LE\Redist\Language Independent\OS Independent\uninstall.ico</td><td>0</td></row>
-		<row><td>UNINST_Uninstall_S_EEEF959CAE434334840E27627F14AB39.exe</td><td/><td>C:\Program Files (x86)\InstallShield\2015LE\Redist\Language Independent\OS Independent\uninstall.ico</td><td>0</td></row>
 	</table>
 
 	<table name="IniFile">
@@ -4413,7 +4411,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="L255">FileName</col>
 		<col def="s72">DirProperty</col>
 		<col def="i2">InstallMode</col>
-		<row><td>UNINST_Uninstall_Setup</td><td>IS_ININSTALL_SHORTCUT</td><td/><td>setup</td><td>2</td></row>
 	</table>
 
 	<table name="RemoveIniFile">
@@ -4499,8 +4496,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>UNINST_Uninstall_Setup</td><td>setup</td><td>UNINST|Uninstall Setup</td><td>IS_ININSTALL_SHORTCUT</td><td>[SystemFolder]msiexec.exe</td><td>/x {7781740F-FD33-4D92-9AE8-F15A04CF0D02}</td><td/><td/><td>UNINST_Uninstall_S_EEEF959CAE434334840E27627F14AB39.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>UNINST_Uninstall_Setup1</td><td>DesktopFolder</td><td>UNINST|Uninstall Setup</td><td>IS_ININSTALL_SHORTCUT</td><td>[SystemFolder]msiexec.exe</td><td>/x {7781740F-FD33-4D92-9AE8-F15A04CF0D02}</td><td/><td/><td>UNINST_Uninstall_S_6DCFCDCD70E443968765F76BEA9F981D.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">

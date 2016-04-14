@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", 
 EndProject
 Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "Setup", "Setup\Setup.isproj", "{577114BD-7F8F-46FB-8074-FB0BE8288490}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Documentation", "Documentation\Documentation.csproj", "{47D409B9-1C44-4F7F-A447-5CF83ED5D80C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CD_ROM|Any CPU = CD_ROM|Any CPU
@@ -84,6 +86,16 @@ Global
 		{577114BD-7F8F-46FB-8074-FB0BE8288490}.Release|Any CPU.Build.0 = SingleImage
 		{577114BD-7F8F-46FB-8074-FB0BE8288490}.SingleImage|Any CPU.ActiveCfg = SingleImage
 		{577114BD-7F8F-46FB-8074-FB0BE8288490}.SingleImage|Any CPU.Build.0 = SingleImage
+		{47D409B9-1C44-4F7F-A447-5CF83ED5D80C}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{47D409B9-1C44-4F7F-A447-5CF83ED5D80C}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{47D409B9-1C44-4F7F-A447-5CF83ED5D80C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47D409B9-1C44-4F7F-A447-5CF83ED5D80C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47D409B9-1C44-4F7F-A447-5CF83ED5D80C}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{47D409B9-1C44-4F7F-A447-5CF83ED5D80C}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{47D409B9-1C44-4F7F-A447-5CF83ED5D80C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47D409B9-1C44-4F7F-A447-5CF83ED5D80C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47D409B9-1C44-4F7F-A447-5CF83ED5D80C}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{47D409B9-1C44-4F7F-A447-5CF83ED5D80C}.SingleImage|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

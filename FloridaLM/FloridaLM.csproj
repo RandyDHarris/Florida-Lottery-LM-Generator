@@ -122,8 +122,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Documentation.htm" />
-    <Content Include="FLMDoc.htm" />
     <Content Include="Images\Dependancies.jpg" />
     <Content Include="Images\LuckyMoney.png" />
   </ItemGroup>

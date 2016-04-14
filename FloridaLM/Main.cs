@@ -34,12 +34,6 @@ namespace FloridaLM
         public Main()
         {
             InitializeComponent();
-            SetupText();
-        }
-        public void SetupText()
-        {
-            string DocumentationPDFPath = Path.GetDirectoryName(Application.ExecutablePath).Replace("bin\\Debug", string.Empty) + "FLMDoc.htm";
-            webBrowser.Navigate(DocumentationPDFPath);
         }
         private void GetHistoryFromFL()
         {
@@ -102,12 +96,6 @@ namespace FloridaLM
                 source.DataSource = _llmn;
                 dgHistory.DataSource = source;
 
-                dgHistory.Columns[0].Width = 180;
-                dgHistory.Columns[1].Width = 180;
-                dgHistory.Columns[2].Width = 180;
-                dgHistory.Columns[3].Width = 180;
-                dgHistory.Columns[4].Width = 180;
-                dgHistory.Columns[5].Width = 240;
             }
             catch (Exception ex)
             {
@@ -137,12 +125,6 @@ namespace FloridaLM
                 dgPicks.DataSource = source;
                 dgPicks.Columns[6].Visible = false;
 
-                dgPicks.Columns[0].Width = 180;
-                dgPicks.Columns[1].Width = 180;
-                dgPicks.Columns[2].Width = 180;
-                dgPicks.Columns[3].Width = 180;
-                dgPicks.Columns[4].Width = 180;
-                dgPicks.Columns[5].Width = 180;
             }
             catch (Exception ex)
             {
